@@ -1,58 +1,307 @@
 <!DOCTYPE html>
 <head>
   <title>McDermott Web Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans:wght@500&family=Poiret+One&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Amatic+SC&family=Open+Sans:wght@500&family=Poiret+One&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Amatic+SC&family=Bad+Script&family=Open+Sans:wght@500&family=Poiret+One&display=swap"
+    rel="stylesheet"
+  />
+  <script
+    src="https://kit.fontawesome.com/18ebea1abd.js"
+    crossorigin="anonymous"
+  ></script>
 </head>
 
 <style>
-  .navbar {
+  @media (max-width: 75em) {
+    html {
+      font-size: 60%;
+    }
+  }
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5vh;
     background-color: #85ffc7;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
     color: #39393a;
     text-align: right;
+    margin-top: 0;
+    z-index: 10;
+  }
+  .nav-list {
+    display: flex;
+    margin: right;
+    list-style-type: none;
+  }
+  .nav-list {
+    margin: 0 1rem;
+  }
+  .nav-list a {
+    font-family: "Open Sans", sans-serif;
+    display: block;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: #39393a;
+    transition: transform 0.3s ease;
+  }
+  .nav-list a:hover {
+    transform: scale(1.1);
+  }
+  #welcome-section {
+    background: url(./Photos/Workspace2.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 95vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #welcome-section h1 {
+    margin-bottom: 5px;
+  }
+
+  #welcome-section::after {
+    content: "";
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.7;
+  }
+
+  #welcome-section * {
+    position: relative;
+    z-index: 1;
+  }
+
+  #projects h1 {
+    background-color: #297373;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .project-tile {
+    display: flex;
+    max-width: 250px;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    transition: transform 0.3s ease;
+  }
+
+  .project-tile:hover {
+    transform: scale(1.1);
+  }
+
+  .project-tile img {
+    display: flex;
+    max-width: 100%;
+  }
+
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-tile p {
+    display: flex;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .contact {
+    background-color: #e6e6e6;
+    display: flex;
+    margin-bottom: 0;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .social-links {
+    list-style-type: none;
+    color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-links a {
+    color: #ff8552;
+    font-size: 35px;
+    margin: 0 15px;
+  }
+
+  section {
+    padding: 20px;
   }
 
   body {
-    background-color: #39393a;
+    background-color: #297373;
+    margin: 0;
+    height: 100%;
   }
 
   h1 {
     color: #ff8552;
+    font-family: "Poiret One", cursive;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
   }
 
   p {
     color: #e6e6e6;
+    font-family: "Bad Script", cursive;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 0px;
   }
 
   footer {
-    background-color: #297373;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    border-top: 4px solid #85ffc7;
   }
 </style>
 
-<nav class="navbar">
-  <a href="#About" class="link">About</a>
-  <a href="#Projects" class="link">Projects</a>
-  <a href="#Contact" class="link">Contact</a>
+<nav id="navbar" class="nav">
+  <ul class="nav-list">
+    <li><a href="#welcome-section" class="link">About</a></li>
+    <li><a href="#projects" class="link">Projects</a></li>
+    <li><a href="#contact" class="link">Contact</a></li>
+  </ul>
 </nav>
 
 <body>
-  <section id="About">
+  <section id="welcome-section">
     <h1>Hi there, I'm Megan</h1>
     <p><em>your next web developer</em></p>
   </section>
 
-  <section id="Projects">
-    <h1>Here's what I have to offer.</h1>
-    //project links go here
+  <section id="projects">
+    <h1>Here's what I have to offer</h1>
+    <div class="projects-container">
+      <div>
+        <a
+          href="https://codepen.io/mmcdermott7/pen/zYdwpvX"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            src="./Photos/WoolyWinoSurvey.jpg"
+            alt="crochet class survey Form"
+          />
+        </a>
+        <p>Crochet Class Survey Form</p>
+      </div>
+
+      <div>
+        <a
+          href="https://codepen.io/mmcdermott7/pen/RwZywBG"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            src="./Photos/RockCycleTechPage.jpg"
+            alt="Rock Cycle technical documentation page"
+        /></a>
+        <p>Rock Cycle Technical Doc</p>
+      </div>
+
+      <div>
+        <a
+          href="https://codepen.io/mmcdermott7/pen/vYJWNar"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            src="./Photos/CatTreeProductPage.jpg"
+            alt="Cat Tree product landing page"
+        /></a>
+        <p>Cat Tree Product Page</p>
+      </div>
+
+      <div>
+        <a
+          href="https://codepen.io/mmcdermott7/pen/VwzjGGR"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            src="./Photos/OkeeffeTributePage.jpg"
+            alt="Georgia O'Keeffe tribute page"
+        /></a>
+        <p>O'Keeffe Tribute Page</p>
+      </div>
+    </div>
   </section>
 
-  <section id="Contact">
+  <section id="contact" class="contact">
     <h1>Catch me if you can...</h1>
-    <a href="#" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
-    <a href="#" target="_blank"><i class="fab fa-github"></i>GitHub</a>
-    <a href="#" target="_blank"><i class="fas fa-envelope"></i>Email</a>
-    <a href="#" target="_blank"><i class="fas fa-phone"></i>Phone</a>
+    <ul class="social-links">
+      <li>
+        <a
+          href="https://www.linkedin.com/in/megan-mcdermott-8b8a8131/"
+          target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </li>
+      <li>
+        <a
+          id="profile-link"
+          href="https://github.com/megmcdermott"
+          target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/meganmcdermottdesign/"
+          target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </li>
+      <li>
+        <a href="mailto:meganmcdermottdesign@gmail.com"
+          ><i class="fas fa-paper-plane"></i
+        ></a>
+      </li>
+    </ul>
   </section>
 
   <footer>
     <p>Made for your viewing pleasure by Megan McDermott</p>
   </footer>
 </body>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
